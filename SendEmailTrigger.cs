@@ -50,7 +50,7 @@ namespace Azure
             }
             _logger.LogInformation($"Request is valid");
 
-            string? apiKey = Environment.GetEnvironmentVariable("SendGridApiKey", EnvironmentVariableTarget.Process);
+            string apiKey = Environment.GetEnvironmentVariable("SendGridApiKey", EnvironmentVariableTarget.Process);
             SendGridClient client = new(apiKey);
             SendGridMessage msg = new()
             {
